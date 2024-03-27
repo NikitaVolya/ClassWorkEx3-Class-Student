@@ -51,7 +51,7 @@ const char* Student::getName()
 void Student::setName(const char* pName)
 {
 	if (name)
-		delete name;
+		delete[] name;
 
 	int len = std::strlen(pName) + 1;
 	name = new char[len];
@@ -63,7 +63,7 @@ void Student::setName(const char* pName)
 void Student::setMarks(const int pMarkCount, const int* pMarks)
 {
 	if (marks)
-		delete marks;
+		delete[] marks;
 
 	marksCount = pMarkCount;
 	marks = new int[pMarkCount];
